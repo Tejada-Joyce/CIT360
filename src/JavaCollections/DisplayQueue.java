@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package JavaCollections;
 
 import java.util.LinkedList;
@@ -12,6 +8,8 @@ import java.util.Queue;
  *
  * @author Joyce
  */
+
+//A Queue is a First In First Out (FIFO) data structure.
 public class DisplayQueue {
  
     public static void displayQueue() {
@@ -20,6 +18,7 @@ public class DisplayQueue {
         
         System.out.println("Is the queue empty? " + client.isEmpty());
         
+        //The Enqueue operation
         client.add("Mary");
         client.add("Aaron");
         client.add("Rose");
@@ -27,6 +26,7 @@ public class DisplayQueue {
         
         System.out.println("How many clients are there now? " + client.size());
         
+        //The Dequeue operation
         client.poll();
         client.add("Alex");
         
