@@ -1,31 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package view;
-import JavaCollections.*;
+
+import ThreadsAndMore.ImplementAll;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author joyce
  */
 public class MainMenuView extends MenuView{
 
- 
+    
+    // The MainMenuView constructor
+    // Purpose: Initialize the menu data
+    // Parameters: none
+    // Returns: none
+    // ===================================
 
     public MainMenuView() {
         super("\n" +
-                "*********************\n" +
-                "* Java Collections  *\n" +
-                "*********************\n" +
-                " 1 - List\n" +
-                " 2 - Set\n" +
-                " 3 - Map\n" +
-                " 4 - Queue\n" +
-                " 5 - Tree\n" +
-                " 6 - Stop\n",     
-         6);
+                "**************************\n" +
+                "* CIT 360 - Technologies *\n" +
+                "**************************\n" +
+                " 1 - Java Collections\n" +
+                " 2 - Threads, Executors and Runnables\n" +
+                " 3 - Quit\n",     
+         3);
     }
     
     // The doAction method
@@ -39,56 +39,36 @@ public class MainMenuView extends MenuView{
         {
              
             case 1: 
-                List();
+                displayJavaCollectView();
                 break;
-          
+           
             case 2: 
-                Set();
+                {
+                    try {
+                        displayThreadsAndMore();
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
                 break;
-          
+           
             case 3:
-                Map();
-                break;
-         
-            case 4: 
-                Queue();
-                break;
-       
-            case 5:
-                Tree();
-                break;
-                
-            case 6:
                 System.out.println("That's it");
         }
     } 
+      
     
-  
-    public void List()
+    public void displayJavaCollectView()
     {
-        DisplayList.displayList();
+        JavaCollectView jcv = new JavaCollectView();
+        jcv.displayMenuView();
     }
      
     
-    public void Set()
+    public void displayThreadsAndMore() throws InterruptedException
     {
-        DisplaySet.displaySet();   
+        ImplementAll threadsAndMore = new ImplementAll();
+        threadsAndMore.displayThreadsAndMore();
     }
-    
-    
-    public void Map()
-    {
-        DisplayMap.displayMap();  
-    }
-    
-    
-    public void Queue()
-    {
-        DisplayQueue.displayQueue();   
-    }
-    
-    public void Tree()
-    {
-    	DisplayTree.displayTree();   
-    }
+  
 }
