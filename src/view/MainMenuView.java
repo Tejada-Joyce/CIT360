@@ -2,6 +2,7 @@
 package view;
 
 import ThreadsAndMore.ImplementAll;
+import AppContrPattern.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
@@ -24,8 +25,9 @@ public class MainMenuView extends MenuView{
                 "**************************\n" +
                 " 1 - Java Collections\n" +
                 " 2 - Threads, Executors and Runnables\n" +
-                " 3 - Quit\n",     
-         3);
+                " 3 - Application Control Pattern\n" +
+                " 4 - Quit\n",     
+         4);
     }
     
     // The doAction method
@@ -51,8 +53,12 @@ public class MainMenuView extends MenuView{
                     }
                 }
                 break;
-           
-            case 3:
+                
+           case 3: 
+                displayAppControlPatt();
+                break;
+                
+            case 4:
                 System.out.println("That's it");
         }
     } 
@@ -70,5 +76,11 @@ public class MainMenuView extends MenuView{
         ImplementAll threadsAndMore = new ImplementAll();
         threadsAndMore.displayThreadsAndMore();
     }
+    
+    public void displayAppControlPatt()
+    {
+        App acp = new App();
+        acp.displayAppControPattern();
+    }        
   
 }
