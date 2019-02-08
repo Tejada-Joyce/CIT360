@@ -2,6 +2,7 @@
 package view;
 
 import ThreadsAndMore.ImplementAll;
+import Hibernate.*;
 import AppContrPattern.*;
 import MVC.*;
 import java.util.logging.Level;
@@ -28,8 +29,9 @@ public class MainMenuView extends MenuView{
                 " 2 - Threads, Executors and Runnables\n" +
                 " 3 - Application Control Pattern\n" +
                 " 4 - MVC\n" + 
-                " 5 - Quit\n",     
-         5);
+                " 5 - Hibernate\n" +
+                " 6 - Quit\n",     
+         6);
     }
     
     // The doAction method
@@ -63,8 +65,12 @@ public class MainMenuView extends MenuView{
             case 4:
                 displayMVC();
                 break;
-                        
+                
             case 5:
+                displayHibernate();
+                break;    
+                        
+            case 6:
                 System.out.println("That's it");    
         }
     } 
@@ -93,6 +99,11 @@ public class MainMenuView extends MenuView{
     { 
         AnimalListView alv = new AnimalListView();
         alv.printAnimalDetails();
+    }
+    
+    public void displayHibernate()
+    { 
+        RunHibernate.displayHibernate();
     }
   
 }
