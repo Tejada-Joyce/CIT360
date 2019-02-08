@@ -91,8 +91,7 @@ public class MainMenuView extends MenuView{
     
     public void displayAppControlPatt()
     {
-        App acp = new App();
-        acp.displayAppControPattern();
+        App.displayAppControPattern();
     }  
     
     public void displayMVC()

@@ -17,8 +17,6 @@ public class App {
     
     public static void displayAppControPattern() {
         
-        AppControlPat convert = new AppControlPat();
-
         System.out.println( "Choose what you want to do\n" + 
                             "1 - Buy Dollars\n" +
                             "2 - Sell Dollars\n" +
@@ -30,7 +28,7 @@ public class App {
         System.out.println("Enter the amount you want to change:");
         Double money = keyboard.nextDouble();
 
-        convert.handleCommand(key,money);
+        AppControlPat.handleCommand(key,money);
     
     }    
 }
