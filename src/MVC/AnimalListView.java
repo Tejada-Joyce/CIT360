@@ -23,20 +23,20 @@ public class AnimalListView {
              System.out.println("\nAnimal List\n" + 
                                 "1 - Add animal\n" +
                                 "2 - Show all animals\n" +
-                                "3 - Exit") ;
+                                "3 - Go back") ;
             int option = sc.nextInt();
             if(option == 1) {
                 controller.first();
             } else if(option == 2){
                 controller.second();
             } else if(option == 3){
-                    System.out.println("BYE!");
-                    break;
+                return;
             } else {
-                    break;
+                System.out.println("That's not an option.");
+                return;
             }
         }
-        sc.close();
+      
     }
   
 }

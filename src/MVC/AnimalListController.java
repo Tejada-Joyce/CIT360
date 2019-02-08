@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class AnimalListController {
     
-    private AnimalListM2 alm2 = new AnimalListM2();
+    private Database alm2 = new Database();
     Scanner sc = new Scanner(System.in);
         
     public void first(){

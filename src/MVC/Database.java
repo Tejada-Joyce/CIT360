@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author Joyce
  */
-public class AnimalListM2 {
+public class Database {
     private ArrayList<AnimalListModel> animals = new ArrayList<>();
     
     public void addAnimal(AnimalListModel animal) {
