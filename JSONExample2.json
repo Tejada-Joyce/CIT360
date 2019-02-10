@@ -1,0 +1,12 @@
+{
+	"name":"Mary Giles",
+
+	"age":24,
+
+	"customer":{"Regular Customer":"No",
+				"Coupons":"2",
+				"Discount":"10%"},
+
+	"order":[{"Type":"Burger","Name":"The Puncher"},
+			{"Type":"Dessert","Name":"Chocolate Cake"}]
+}

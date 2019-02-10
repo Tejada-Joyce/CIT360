@@ -3,6 +3,8 @@ package view;
 
 import ThreadsAndMore.ImplementAll;
 import Hibernate.*;
+import JSON.Json;
+import JSON.Json2;
 import AppContrPattern.*;
 import MVC.*;
 import java.util.logging.Level;
@@ -30,8 +32,9 @@ public class MainMenuView extends MenuView{
                 " 3 - Application Control Pattern\n" +
                 " 4 - MVC\n" + 
                 " 5 - Hibernate\n" +
-                " 6 - Quit\n",     
-         6);
+                " 6 - JSON\n" +
+                " 7 - Quit\n",      
+         7);
     }
     
     // The doAction method
@@ -68,9 +71,18 @@ public class MainMenuView extends MenuView{
                 
             case 5:
                 displayHibernate();
+                break;  
+                
+            case 6:
+				try {
+					displayJSON();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
                 break;    
                         
-            case 6:
+            case 7:
                 System.out.println("That's it");    
         }
     } 
@@ -103,6 +115,12 @@ public class MainMenuView extends MenuView{
     public void displayHibernate()
     { 
         RunHibernate.displayHibernate();
+    }
+    
+    public void displayJSON() throws Exception
+    {
+    	Json2.fileToJson();
+		Json.jsonToFile();
     }
   
 }
