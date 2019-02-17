@@ -3,6 +3,7 @@ package view;
 
 import ThreadsAndMore.ImplementAll;
 import Hibernate.*;
+import HttpURLConnection.HttpUrlConecc;
 import JSON.Json;
 import JSON.Json2;
 import AppContrPattern.*;
@@ -33,8 +34,9 @@ public class MainMenuView extends MenuView{
                 " 4 - MVC\n" + 
                 " 5 - Hibernate\n" +
                 " 6 - JSON\n" +
-                " 7 - Quit\n",      
-         7);
+                " 7 - HttpURLConnection\n" +
+                " 8 - Quit\n",      
+         8);
     }
     
     // The doAction method
@@ -80,14 +82,17 @@ public class MainMenuView extends MenuView{
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-                break;    
-                        
+                break; 
+                
             case 7:
+                displayHttpUrlCon();
+                break;      
+                        
+            case 8:
                 System.out.println("That's it");    
         }
     } 
       
-    
     public void displayJavaCollectView()
     {
         JavaCollectView jcv = new JavaCollectView();
@@ -97,8 +102,7 @@ public class MainMenuView extends MenuView{
     
     public void displayThreadsAndMore() throws InterruptedException
     {
-        ImplementAll threadsAndMore = new ImplementAll();
-        threadsAndMore.displayThreadsAndMore();
+        ImplementAll.displayThreadsAndMore();
     }
     
     public void displayAppControlPatt()
@@ -121,6 +125,10 @@ public class MainMenuView extends MenuView{
     {
     	Json2.fileToJson();
 		Json.jsonToFile();
+    }
+    public void displayHttpUrlCon() 
+    {
+    	HttpUrlConecc.displayHttpUrlConn();
     }
   
 }
