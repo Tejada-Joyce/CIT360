@@ -22,5 +22,7 @@
 	<classpathentry kind="lib" path="C:/Users/Joyce/Downloads/hibernate-release-5.4.1.Final/hibernate-release-5.4.1.Final/lib/required/txw2-2.3.1.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-java-8.0.15.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Joyce/Downloads/json-simple-1.1.jar/json-simple-1.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="lib" path="C:/Users/Joyce/jars/hamcrest-core-2.1.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
