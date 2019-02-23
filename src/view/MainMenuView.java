@@ -30,7 +30,7 @@ public class MainMenuView extends MenuView{
                 "**************************\n" +
                 " 1 - Java Collections\n" +
                 " 2 - Threads, Executors and Runnables\n" +
-                " 3 - Application Control Pattern\n" +
+                " 3 - Application Controller Pattern\n" +
                 " 4 - MVC\n" + 
                 " 5 - Hibernate\n" +
                 " 6 - JSON\n" +

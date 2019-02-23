@@ -14,9 +14,13 @@ public class SellDollars implements HandleConverter {
     double change = 3.36;
     
     public void execute (Double dollars) {
-        Double soles = dollars * change;
-        Double howMuch = Math.round(soles * 100.0)/100.0;
-        System.out.println("That would be " + howMuch + " soles.");
+    	if (dollars < 0) {
+    		System.out.println("That amount is not allowed.");
+    	} else {
+	        Double soles = dollars * change;
+	        Double howMuch = Math.round(soles * 100.0)/100.0;
+	        System.out.println("That would be " + howMuch + " soles.");
+    	}
     }
     
 }
