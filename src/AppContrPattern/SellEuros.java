@@ -14,13 +14,11 @@ public class SellEuros implements HandleConverter {
     double change = 3.84;
     
     public void execute (Double euros) {
-    	if (euros < 0) {
-    		System.out.println("That amount is not allowed.");
-    	} else {
-	        Double soles = euros * change;
-	        Double howMuch = Math.round(soles * 100.0)/100.0;
-	        System.out.println("That would be " + howMuch + " soles.");
-    	}    
+    	
+        Double soles = euros * change;
+        Double howMuch = Math.round(soles * 100.0)/100.0;
+        System.out.println("That would be " + howMuch + " soles.");
+    	    
     }
     
 }

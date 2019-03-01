@@ -23,11 +23,25 @@ public class App {
                             "3 - Buy Euros\n" + 
                             "4 - Sell Euros\n") ;
 
-        Integer key = keyboard.nextInt();
-
+        Integer key;
+		do {
+			key = keyboard.nextInt();
+			if(key < 1 || key > 4) {			
+			System.out.println("\nChoose a valid option. Option must be between 1 and 4.");
+			}   
+		} while(key < 1 || key > 4);
+       
         System.out.println("Enter the amount you want to change:");
-        Double money = keyboard.nextDouble();
-
+        
+        Double money;
+        
+        do {
+        	money = keyboard.nextDouble();
+        	if(money < 0) {			
+    			System.out.println("\nThat amount is not allowed. Please enter a valid amount.");
+    			}   
+    	} while(money < 0);
+        
         AppControlPat.handleCommand(key,money);
     
     }    
