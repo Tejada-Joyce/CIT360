@@ -112,8 +112,7 @@ public class MainMenuView extends MenuView{
     
     public void displayMVC()
     { 
-        AnimalListView alv = new AnimalListView();
-        alv.printAnimalDetails();
+        AnimalListView.display();
     }
     
     public void displayHibernate()

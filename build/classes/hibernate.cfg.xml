@@ -29,7 +29,7 @@
 		
 		<!-- Mapping to classes -->
 		<mapping class="Hibernate.Book"/>
-		
+		<mapping class="MVC.AnimalListModel"/>
 	</session-factory>
 	
 </hibernate-configuration>

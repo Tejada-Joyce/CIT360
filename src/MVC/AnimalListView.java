@@ -5,7 +5,7 @@
  */
 package MVC;
 
-import java.util.ArrayList;
+
 import java.util.Scanner;
 
 /**
@@ -14,29 +14,39 @@ import java.util.Scanner;
  */
 public class AnimalListView {
     
-    public void printAnimalDetails(){
+private static Scanner keyboard = new Scanner(System.in);   
+    
+    public static void display() {
+        
+        System.out.println( "Choose what you want to do\n" + 
+                            "1 - Search animal by ID\n" +
+                            "2 - See all animals\n" ) ;
+                                    
+        Integer option = keyboard.nextInt();
+        
+        switch(option)
+        { 
+            case 1: 
+                displayByID();
+                break;
            
-        Scanner sc = new Scanner(System.in);
-        AnimalListController controller = new AnimalListController();
+            case 2:
+                seeAll();
+                break; 
+         } 
+                
+    }    
+
+	public static void displayByID() {
+		System.out.println( "Enter the ID (1-5)\n");
 		
-        while(true) {
-             System.out.println("\nAnimal List\n" + 
-                                "1 - Add animal\n" +
-                                "2 - Show all animals\n" +
-                                "3 - Go back") ;
-            int option = sc.nextInt();
-            if(option == 1) {
-                controller.first();
-            } else if(option == 2){
-                controller.second();
-            } else if(option == 3){
-                return;
-            } else {
-                System.out.println("That's not an option.");
-                return;
-            }
-        }
-      
-    }
+		Integer id = keyboard.nextInt();
+		System.out.println(TestDAO.getInstance().getAnimal(id));
+		
+	}
+
+	public static void seeAll() {
+		TestDAO.getInstance().printAnimals();
+	}
   
 }
