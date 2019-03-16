@@ -112,7 +112,7 @@ public class MainMenuView extends MenuView{
     
     public void displayMVC()
     { 
-        AnimalListView.display();
+        AnimalViews.display();
     }
     
     public void displayHibernate()
