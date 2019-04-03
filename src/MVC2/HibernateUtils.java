@@ -1,4 +1,4 @@
-package MVC;
+package MVC2;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;

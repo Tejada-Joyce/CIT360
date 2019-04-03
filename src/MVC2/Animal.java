@@ -1,4 +1,4 @@
-package MVC;
+package MVC2;
 
 import javax.persistence.*;
 
@@ -16,14 +16,23 @@ public class Animal {
 	@Column(name="name")
     private String name;
 	
-	@Column(name="description")
-    private String description;
+	@Column(name="breed")
+    private String breed;
 	
 	@Column(name="status")
     private String status;
 	
-  
-    public int getId() {
+	public Animal () {} 
+	
+    public Animal(String name, String breed, String status) {
+		super();
+		this.name = name;
+		this.breed = breed;
+		this.status = status;
+	}
+
+
+	public int getId() {
 		return id;
 	}
 
@@ -42,13 +51,13 @@ public class Animal {
 		this.name = name;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getBreed() {
+		return breed;
 	}
 
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setBreed(String description) {
+		this.breed = description;
 	}
 
 	public String getStatus() {
@@ -62,7 +71,7 @@ public class Animal {
 
 	@Override
     public String toString() {
-        return ""+id+"\t"+name+"\t"+description+"\t"+status;
+        return ""+id+"\t"+name+"\t"+breed+"\t"+status;
     }
         
 }

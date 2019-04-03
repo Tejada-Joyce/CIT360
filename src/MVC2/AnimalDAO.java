@@ -1,4 +1,4 @@
-package MVC;
+package MVC2;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -31,7 +31,7 @@ public class AnimalDAO {
 		try {
 			session = factory.openSession();
 			session.getTransaction().begin();
-			String sql = "from MVC.Animal";
+			String sql = "from MVC2.Animal";
 			List<Animal> animals = (List<Animal>)session.createQuery(sql).getResultList();
 			session.getTransaction().commit();
 			return animals;
@@ -49,7 +49,7 @@ public class AnimalDAO {
 		try {
 			session = factory.openSession();
 			session.getTransaction().begin();
-			String sql = "from MVC.Animal where id = " + Integer.toString(id);
+			String sql = "from MVC2.Animal where id = " + Integer.toString(id);
 			Animal animal = (Animal)session.createQuery(sql).getSingleResult();
 			session.getTransaction().commit();
 			return animal;
@@ -63,11 +63,21 @@ public class AnimalDAO {
 		}
 	}
 	
-	public void printAnimals(){
-		List<Animal> an = AnimalDAO.getInstance().getAnimals();
-		for (Animal i : an) {
-			System.out.println(i);
+	public Animal save(Animal animal) {
+		try {
+			session = factory.openSession();
+			session.getTransaction().begin();
+			session.save(animal);
+			session.getTransaction().commit();
+			return animal;
+		} catch (Exception e) {
+			e.printStackTrace();
+			//Rollback in case of an error occurred.
+			session.getTransaction().rollback();
+			return null;
+		} finally {
+			session.close();
 		}
+		
 	}
-	
 }

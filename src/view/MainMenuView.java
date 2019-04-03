@@ -7,7 +7,9 @@ import HttpURLConnection.HttpUrlConecc;
 import JSON.Json;
 import JSON.Json2;
 import AppContrPattern.*;
-import MVC.*;
+import MVC2.AnimalController;
+
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
@@ -112,7 +114,9 @@ public class MainMenuView extends MenuView{
     
     public void displayMVC()
     { 
-        AnimalViews.display();
+    	Scanner sc = new Scanner(System.in);
+		AnimalController ac = new AnimalController();
+		ac.index(sc);
     }
     
     public void displayHibernate()
